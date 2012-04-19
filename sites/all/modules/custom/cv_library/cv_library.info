@@ -1,0 +1,9 @@
+name = 'CV Library'
+description = 'Contains context sensitive js and css'
+package = 'CV Custom Modules'
+dependencies[] = re_contextlibraries
+core = 7.x
+php = 5.2
+version = 7.x-1.0
+
+

@@ -1,0 +1,43 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Provides the RE CL Example javascript library and styles to the RE Context
+ * Libraries module.
+ */
+
+
+// Constants:
+
+/**
+ * Implements hook_define_re_contextlibraries_library().
+ */
+function cv_library_define_re_contextlibraries_library() {
+  return array('cv_library:cv_library' => t('CV Library'));
+} // re_clexample_define_re_contextlibraries_library()
+
+
+/**
+ * Implements hook_library().
+ *
+ * Used to register libraries with the system.
+ *
+ * @todo Figure out why dependencies do NOT work here.
+ */
+function cv_library_library() {
+  $path_to_module = drupal_get_path('module', 'cv_library');
+  $libraries['cv_library'] = array(
+    'title' => 'CV Library',
+    'website' => '',
+    'version' => '1.0',
+    'js' => array(
+      $path_to_module . '/js/timeline.js' => array(
+        'group' => JS_LIBRARY,
+        'weight' => 1,
+      ),
+    ),
+    //'dependencies' => array('re_contextlibraries', 're_contextlibraries'),
+  );
+  return $libraries;
+} // re_clexample_library()
